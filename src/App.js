@@ -17,28 +17,28 @@ const App = () => {
         <div>
           <ul>
             <li>
-              <Link to="/buttons"></Link>
+              <Link to="/buttons">Buttons</Link>
             </li>
             <li>
-              <Link to="/forms"></Link>
+              <Link to="/forms">Forms</Link>
             </li>
             <li>
-              <Link to="/inputs"></Link>
+              <Link to="/inputs">Inputs</Link>
             </li>
           </ul>
         </div>
-      </Router>
       <Switch>
         <Route exact path="/buttons">
           <Buttons />
         </Route>
-        <Route exact path="forms">
+        <Route exact path="/forms">
           <Forms />
         </Route>
         <Route exact path="/inputs">
           <Inputs />
         </Route>
-      </Switch>
+        </Switch>
+        </Router>
     </>
   )
 };
