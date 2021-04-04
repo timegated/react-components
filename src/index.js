@@ -1,14 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';  
-import {BrowserRouter as Router} from 'react-router-dom'
+import ReactDOM from 'react-dom';
 
 // The component gallery
 
 import App from './App';
 
 ReactDOM.render(
-    <Router>
-        <App/>
-    </Router>, 
-document.getElementById("root")
+    <App />,
+    document.getElementById("root")
 );
