@@ -20,7 +20,15 @@ const theme = {
     
   },
   shadows: {
-    boxShadow: "1px 1px 0.3em hsl(42, 15%, 13%)"
+    boxShadow: "1px 1px 0.3em hsl(42, 15%, 13%)",
+    inset: "inset 1px 1px 0.3em hsl(42, 15%, 13%)"
+  },
+  fontSize: {
+    xs: "0.50rem",
+    sm: "0.65rem",
+    md: "0.75rem",
+    lg: "1rem",
+    xlg: "1.25rem"
   }
 }
 

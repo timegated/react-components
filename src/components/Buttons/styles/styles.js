@@ -9,4 +9,9 @@ export const ButtonOne = styled.button`
   background: ${props => props.bg};
   color: ${props => props.color};
   box-shadow: ${props => props.boxShadow};
+  font-size: ${props => props.fontSize};
+
+  &:hover {
+    box-shadow: ${props => props.theme.shadows.inset}
+  }
 `
