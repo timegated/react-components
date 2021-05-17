@@ -8,6 +8,7 @@ import {
   TableCell,
   Link,
 } from '@material-ui/core';
+import exitTest from '../../assets/exit-test.svg';
 // import Loading from '../Loading/Loading';
 // import { format } from '../../utils/format';
 
@@ -19,41 +20,56 @@ import {
  * @param {array}
 */
 
-const DynamicTable = ({ obj, actions }) => {
+const DynamicTable = ({ obj, actions, crud }) => {
   const [data, setData] = React.useState(obj);
  
   // we don't need the ID in the header column; could make it optional in case we do or hide it completely.
   const createTableHeader = (json) => {
     // hide id for table header for each object in this array
     // does this affect delete operation?
-    const noId = json.games.map(({ id, ...noId }) => noId);
-    console.log(noId);
+    const noId = json.data.map(({ id, ...noId }) => noId);
     return Object.keys(noId[0]).map((key, index) => {
       return (<TableCell component="th" align="left" key={index}>{key}</TableCell>) // mapped over the enumerable props and displayed them
     });
   };
 
   const createTableBody = (json) => {
-    return json.games.map(game => {
+    // I need as many rows as I have properties with their corresponding values.
+    return json.data.map(data => {
       return (
-        <TableRow key={game.id}>
+        <TableRow key={data.id}>
           <TableCell>
-            {game.location}
+            {data.uniqueId}
           </TableCell>
           <TableCell>
-            {game.courseName}
+            {data.role}
           </TableCell>
           <TableCell>
-            {game.questions}
+            {data.location}
           </TableCell>
           <TableCell>
-            {game.levels}
+            {data.access}
           </TableCell>
           <TableCell>
-            {game.avg}
+            {data.course}
           </TableCell>
           <TableCell>
-            {createTableActions(['EDIT','DUPLICATE','DELETE'])}
+            {data.grade}
+          </TableCell>
+          <TableCell>
+            {data.progress}
+          </TableCell>
+          <TableCell>
+            {data.accuracy}
+          </TableCell>
+          <TableCell>
+            {data.profile}
+          </TableCell>
+          <TableCell>
+            {data.status}
+          </TableCell>
+          <TableCell>
+            {createTableActions(crud)}
           </TableCell>
         </TableRow>
       );
@@ -76,6 +92,7 @@ const DynamicTable = ({ obj, actions }) => {
 
   return (
     <div>
+      <img src={exitTest} alt="" />
       <Table>
         <TableHead>
           <TableRow>
