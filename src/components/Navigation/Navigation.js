@@ -11,6 +11,7 @@ import Forms from '../Forms/Forms';
 import Inputs from '../Inputs/Inputs';
 import DynamicTable from '../Tables/DynamicTable';
 import { dataCollection } from '../../dummy/dataCollection';
+import tableData from '../../dummy/tablaData.json';
 import styled from 'styled-components';
 
 const NavContainer = styled.div`
@@ -72,7 +73,7 @@ const Navigation = () => {
             <Inputs />
           </Route>
           <Route exact path="/tables">
-            <DynamicTable obj={dataCollection}/>
+            <DynamicTable obj={tableData}/>
           </Route>
         </Switch>
       </Router>

@@ -1,0 +1,49 @@
+{
+  "games": [
+    {
+      "id": "e3e196a7-a8cc-4ad8-b4a8-ac330e9c8946",
+      "location": "50P",
+      "courseName": "GERM SAFE - 50P",
+      "questions": 11,
+      "levels": 4,
+      "status": true,
+      "avg": "12m 12s"
+    },
+    {
+      "id": "e3e196a7-a8cc-4ad8-b4a8-ac330e9c8947",
+      "location": "50P",
+      "courseName": "GERM SAFE - 50P",
+      "questions": 11,
+      "levels": 4,
+      "status": false,
+      "avg": "12m 12s"
+    },
+    {
+      "id": "e3e196a7-a8cc-4ad8-b4a8-ac330e9c8948",
+      "location": "50P",
+      "courseName": "GERM SAFE - 50P",
+      "questions": 11,
+      "levels": 4,
+      "status": false,
+      "avg": "12m 12s"
+    },
+    {
+      "id": "e3e196a7-a8cc-4ad8-b4a8-ac330e9c8949",
+      "location": "50P",
+      "courseName": "GERM SAFE - 50P",
+      "questions": 11,
+      "levels": 4,
+      "status": true,
+      "avg": "12m 12s"
+    },
+    {
+      "id": "e3e196a7-a8cc-4ad8-b4a8-ac330e9c8950",
+      "location": "50P",
+      "courseName": "GERM SAFE - 50P",
+      "questions": 11,
+      "levels": 4,
+      "status": true,
+      "avg": "12m 12s"
+    }
+  ]
+}

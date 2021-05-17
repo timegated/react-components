@@ -7,38 +7,70 @@ import {
   TableBody,
   TableCell,
 } from '@material-ui/core';
+import Loading from '../Loading/Loading';
+import { format } from '../../utils/format';
 
-const format = (string) => {
-  return string[0].toUpperCase() + string.substring(1);
-};
+
 
 /**
  * OBJ represents JSON data
  * @param {object}
- * */ 
+ *  
+*/
+
 const DynamicTable = ({ obj }) => {
-  console.log(obj[0])
+  const [data, setData] = React.useState(obj);
+
+  const createTableHeader = (json) => {
+    console.log('from createTableHeader', json)
+    return Object.keys(json.games[0]).map((key, index) => {
+      return (<TableCell component="th" align="left" key={index}>{key}</TableCell>)
+    });
+  };
+
+  const createTableBody = (json) => {
+    console.log('from createTableBody', json)
+    return json.games.map(game => {
+      return (
+        <TableRow key={game.id}>
+          <TableCell>
+            {game.location}
+          </TableCell>
+          <TableCell>
+            {game.courseName}
+          </TableCell>
+          <TableCell>
+            {game.questions}
+          </TableCell>
+          <TableCell>
+            {game.levels}
+          </TableCell>
+          <TableCell>
+            {game.avg}
+          </TableCell>
+        </TableRow>
+      );
+    })
+  };
+
   return (
     <div>
       <Table>
         <TableHead>
           <TableRow>
-            {Object.keys(obj[0]).map((key, index) => {
-              // console.log('the object keys', key);
-              console.log('the formatting function',format(key));
-              return (
-                <TableCell key={index}>{format(key)}</TableCell>
-              )
-            })};
+            {createTableHeader(data)}
           </TableRow>
         </TableHead>
+        <TableBody>
+          {createTableBody(data)}
+        </TableBody>
       </Table>
     </div>
   )
 };
 
 DynamicTable.propTypes = {
-  obj: PropTypes.array.isRequired,
+  obj: PropTypes.object.isRequired,
 };
 
 export default DynamicTable;
