@@ -9,7 +9,7 @@ import {
 import Buttons from '../Buttons/Buttons';
 import Forms from '../Forms/Forms';
 import Inputs from '../Inputs/Inputs';
-import DynamicTable from '../Tables/DynamicTable';
+import DynamicTable from '../Tables/DynamicTable/DynamicTable';
 import tableData from '../../dummy/tablaData.json';
 import tableData2 from '../../dummy/tableData2.json';
 import styled from 'styled-components';
@@ -21,6 +21,7 @@ const NavContainer = styled.div`
   margin: 0;
   padding: 2.5rem;
   background: #FFFFFF;
+  width: 100%;
 
 `;
 
