@@ -22,7 +22,6 @@ const NavContainer = styled.div`
   padding: 2.5rem;
   background: #FFFFFF;
   width: 100%;
-
 `;
 
 const NavList = styled.ul`

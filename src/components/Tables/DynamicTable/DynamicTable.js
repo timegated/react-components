@@ -9,7 +9,6 @@ import {
   Link,
 } from '@material-ui/core';
 import DynamicRow from './DynamicRow';
-import exitTest from '../../../assets/exit-test.svg';
 // import Loading from '../Loading/Loading';
 // import { format } from '../../utils/format';
 
