@@ -73,7 +73,7 @@ const Navigation = () => {
             <Inputs />
           </Route>
           <Route exact path="/tables">
-            <DynamicTable obj={tableData2} crud={[]} />
+            <DynamicTable data={tableData2} crud={[]} />
           </Route>
         </Switch>
       </Router>

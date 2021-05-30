@@ -15,28 +15,45 @@ import DynamicRow from './DynamicRow';
 
 
 /**
- * OBJ represents JSON data
- * @param {object}
- * @param {array}
+ * 
+ * @param {object} props.data - json data from an API request
+ * @param {array} propos.actions - array of strings passed in for CRUD
 */
+const DynamicTable = ({ data, actions }) => {
 
-const DynamicTable = ({ obj, actions, crud }) => {
-  const [data, setData] = React.useState(obj);
- 
+  // returns only select properties from an object
+  const omitProperties = (json, ...args) => {
+    const doesExist = args.forEach(arg => {
+      console.log('the single arg ==> ', arg)
+      return json[0].hasOwnProperty([`${arg}`]);
+    });
+    console.log('do any of the args exist on the object? ==> ', doesExist)
+    if (json[0].hasOwnProperty([args[0]])) {
+      console.log(`object has property ${args[0]}`)
+    };
+    const selectedProps = json.map(item => item);
+    console.log('the json object', json);
+    console.log('the first argument from ...args ==> ', args[0]);
+    console.log('the id property ==> ', json[0][`${args[0]}`]);
+    console.log('the selected properties ==> ', selectedProps);
+    return selectedProps;
+  };
+
+  omitProperties(data, 'id', 'status','access');
+  
   // we don't need the ID in the header column; could make it optional in case we do or hide it completely.
-  const createTableHeader = (json) => {
-    const noId = json.data.map(({ id, ...noId }) => noId);
+  const createTableHeader = () => {
+    const noId = data.map(({ id, ...noId }) => noId);
     return Object.keys(noId[0]).map((key, index) => {
       return (<TableCell key={index}>{key}</TableCell>) // mapped over the enumerable props and displayed them
     });
   };
 
-  const createTableRows = (json) => {
+  const createTableRows = () => {
     // I need as many rows as I have properties with their corresponding values.
-    const noId = json.data.map(({ id, ...noId }) => noId);
+    const noId = data.map(({ id, ...noId }) => noId);
     const keys = Object.keys(noId[0]);
-    return json.data.map((row, index) => {
-      console.log(row);
+    return data.map((row) => {
       return (
         <TableRow key={row.id}>
           <DynamicRow key={row.id} data={row} keys={keys}/>
@@ -77,7 +94,7 @@ const DynamicTable = ({ obj, actions, crud }) => {
 };
 
 DynamicTable.propTypes = {
-  obj: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default DynamicTable;

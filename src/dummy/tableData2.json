@@ -1,82 +1,80 @@
-{
-  "data": [
-    {
-      "id": "e3e196a7-a8cc-6ad8-b4a8-ac330e9c8933",
-      "unique_id":"Jason",
-      "role": "Manager",
-      "location": "50P",
-      "access":"50P, Shipyard, OPS",
-      "course": "GERM SAFE",
-      "grade": "A",
-      "progress": "100%",
-      "accuracy": "75%",
-      "profile": "icon",
-      "status":"Completed"
-    },
-    {
-      "id": "e3e196a7-a8cc-5ad8-b4a8-ac330e9c8935",
-      "uniqueId":"Jason",
-      "role": "Manager",
-      "location": "50P",
-      "access":"50P, Shipyard, OPS",
-      "course": "GERM SAFE",
-      "grade": "A",
-      "progress": "100%",
-      "accuracy": "75%",
-      "profile": "icon",
-      "status":"Completed"
-    },
-    {
-      "id": "e3e196a7-a8cc-7ad8-b4a8-ac330e9c8936",
-      "uniqueId":"Jason",
-      "role": "Manager",
-      "location": "50P",
-      "access":"50P, Shipyard, OPS",
-      "course": "GERM SAFE",
-      "grade": "A",
-      "progress": "100%",
-      "accuracy": "75%",
-      "profile": "icon",
-      "status":"Completed"
-    },
-    {
-      "id": "e3e196a7-a8cc-8ad8-b4a8-ac330e9c8999",
-      "uniqueId":"Jason",
-      "role": "Manager",
-      "location": "50P",
-      "access":"50P, Shipyard, OPS",
-      "course": "GERM SAFE",
-      "grade": "A",
-      "progress": "100%",
-      "accuracy": "75%",
-      "profile": "icon",
-      "status":"Completed"
-    },
-    {
-      "id": "e3e196a7-a8cc-9ad8-b4a8-ac330e9c8939",
-      "uniqueId":"Dave",
-      "role": "Manager",
-      "location": "50P",
-      "access":"50P, Shipyard, OPS",
-      "course": "GERM SAFE",
-      "grade": "A",
-      "progress": "100%",
-      "accuracy": "75%",
-      "profile": "icon",
-      "status":"Completed"
-    },
-    {
-      "id": "e3e196a7-a8cc-10ad8-b4a8-ac330e9c89654",
-      "uniqueId":"Jason",
-      "role": "Manager",
-      "location": "50P",
-      "access":"50P, Shipyard, OPS",
-      "course": "GERM SAFE",
-      "grade": "A",
-      "progress": "100%",
-      "accuracy": "75%",
-      "profile": "icon",
-      "status":"Completed"
-    }
-  ]
-}
+[
+  {
+    "id": "e3e196a7-a8cc-6ad8-b4a8-ac330e9c8933",
+    "unique_id": "Jason",
+    "role": "Manager",
+    "location": "50P",
+    "access": "50P, Shipyard, OPS",
+    "course": "GERM SAFE",
+    "grade": "A",
+    "progress": "100%",
+    "accuracy": "75%",
+    "profile": "icon",
+    "status": "Completed"
+  },
+  {
+    "id": "e3e196a7-a8cc-5ad8-b4a8-ac330e9c8935",
+    "uniqueId": "Jason",
+    "role": "Manager",
+    "location": "50P",
+    "access": "50P, Shipyard, OPS",
+    "course": "GERM SAFE",
+    "grade": "A",
+    "progress": "100%",
+    "accuracy": "75%",
+    "profile": "icon",
+    "status": "Completed"
+  },
+  {
+    "id": "e3e196a7-a8cc-7ad8-b4a8-ac330e9c8936",
+    "uniqueId": "Jason",
+    "role": "Manager",
+    "location": "50P",
+    "access": "50P, Shipyard, OPS",
+    "course": "GERM SAFE",
+    "grade": "A",
+    "progress": "100%",
+    "accuracy": "75%",
+    "profile": "icon",
+    "status": "Completed"
+  },
+  {
+    "id": "e3e196a7-a8cc-8ad8-b4a8-ac330e9c8999",
+    "uniqueId": "Jason",
+    "role": "Manager",
+    "location": "50P",
+    "access": "50P, Shipyard, OPS",
+    "course": "GERM SAFE",
+    "grade": "A",
+    "progress": "100%",
+    "accuracy": "75%",
+    "profile": "icon",
+    "status": "Completed"
+  },
+  {
+    "id": "e3e196a7-a8cc-9ad8-b4a8-ac330e9c8939",
+    "uniqueId": "Dave",
+    "role": "Manager",
+    "location": "50P",
+    "access": "50P, Shipyard, OPS",
+    "course": "GERM SAFE",
+    "grade": "A",
+    "progress": "100%",
+    "accuracy": "75%",
+    "profile": "icon",
+    "status": "Completed"
+  },
+  {
+    "id": "e3e196a7-a8cc-10ad8-b4a8-ac330e9c89654",
+    "uniqueId": "Jason",
+    "role": "Manager",
+    "location": "50P",
+    "access": "50P, Shipyard, OPS",
+    "course": "GERM SAFE",
+    "grade": "A",
+    "progress": "100%",
+    "accuracy": "75%",
+    "profile": "icon",
+    "status": "Completed"
+  }
+]

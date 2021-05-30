@@ -6,7 +6,6 @@ const DynamicRow = ({ data, keys }) => {
     return null
   } 
   return keys.map((key, index) => {
-    console.log(key);
     return (
       <MUITableCell key={index}>
         <div>{data[key]}</div>
