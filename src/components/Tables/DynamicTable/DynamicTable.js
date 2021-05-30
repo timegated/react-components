@@ -23,19 +23,20 @@ const DynamicTable = ({ data, actions }) => {
 
   // returns only select properties from an object
   const omitProperties = (json, ...args) => {
-    const doesExist = args.forEach(arg => {
-      console.log('the single arg ==> ', arg)
-      return json[0].hasOwnProperty([`${arg}`]);
+    const singleArg = args.map(arg => {
+      console.log('the arg ==> ', arg);
+      return arg;
     });
+    const doesExist = json.map(data => {
+      return data.hasOwnProperty([singleArg[0]]);
+    })
     console.log('do any of the args exist on the object? ==> ', doesExist)
-    if (json[0].hasOwnProperty([args[0]])) {
-      console.log(`object has property ${args[0]}`)
-    };
+
     const selectedProps = json.map(item => item);
-    console.log('the json object', json);
-    console.log('the first argument from ...args ==> ', args[0]);
-    console.log('the id property ==> ', json[0][`${args[0]}`]);
-    console.log('the selected properties ==> ', selectedProps);
+    // console.log('the json object', json);
+    // console.log('the first argument from ...args ==> ', args[0]);
+    // console.log('the id property ==> ', json[0][`${args[0]}`]);
+    // console.log('the selected properties ==> ', selectedProps);
     return selectedProps;
   };
 
