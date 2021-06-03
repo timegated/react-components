@@ -17,7 +17,6 @@ const theme = {
     black: {
       regular: "hsl(42, 15%, 13%)"
     },
-    
   },
   shadows: {
     boxShadow: "1px 1px 0.3em hsl(42, 15%, 13%)",
@@ -29,7 +28,13 @@ const theme = {
     md: "0.75rem",
     lg: "1rem",
     xlg: "1.25rem"
-  }
+  },
+  breakpoints: {
+    sm: '540px',
+    md: '768px',
+    lg: '960px',
+    xlg: '1280px',
+  },
 }
 
 export default theme;

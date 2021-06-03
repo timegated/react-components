@@ -1,29 +1,39 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+/** 
+ * Hook for injecting custom styles into mui components
+ * @param {object} theme - theme object from mui default and/or custom
+ * @returns {object} - css styles computed with JS
+ */
+const useStyles = makeStyles((theme) => ({ // Responsive table styles with MUI
   root: {
+    marginTop: '4.5rem',
+    display: 'block',
     [theme.breakpoints.up('sm')]: {
-      display: 'block',
+      display: 'table',
       alignSelf: 'center',
     },
     [theme.breakpoints.up('md')]: {
-      border: '1px solid red',
     },
-    border: '2px solid green',
     ['& th']: {
-      border: '1px solid black',
+      display: 'none',
       textAlign: 'center',
-      [theme.breakpoints.down('sm')]: {
-        display: 'block',
+      [theme.breakpoints.up('sm')]: {
+        display: 'table-cell',
         textAlign: 'left',
       }
     },
     ['& td']: {
-      border: '1px solid black',
+      display: 'block',
       textAlign: 'center',
-      [theme.breakpoints.down('sm')]: {
-        display: 'block',
+      [theme.breakpoints.up('sm')]: {
+        display: 'table-cell',
         textAlign: 'left',
+      }
+    },
+    ['& svg']: {
+      '&:hover': {
+        cursor: 'pointer'
       }
     },
   },
