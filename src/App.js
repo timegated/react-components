@@ -4,6 +4,7 @@ import { SnackbarProvider } from 'notistack';
 import { Switch, Route } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import Tables from './pages/Tables/Tables';
+import Buttons from './pages/Buttons/Buttons';
 
 const App = () => {
   const notistackRef = React.createRef();
@@ -24,6 +25,9 @@ const App = () => {
       >
         <Navigation />
         <Switch>
+          <Route path="/buttons">
+            <Buttons />
+          </Route>
           <Route path="/tables">
             <Tables />
           </Route>

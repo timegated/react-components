@@ -9,6 +9,7 @@ import {
   TableBody,
   TableCell,
 } from '@material-ui/core';
+import Editable from '../../ContentEdit/Editable';
 
 /**
  * 
@@ -34,12 +35,14 @@ const DynamicTable = ({ actions }) => {
   React.useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => {
+        enqueueSnackbar('Loading successful', {
+          variant: 'success',
+        });
         return res.json();
       })
       .then(json => {
         enqueueSnackbar('Loading successful', {
           variant: 'success',
-          preventDuplicate: true,
         });
         return setData(json);
       })
@@ -88,9 +91,9 @@ const DynamicTable = ({ actions }) => {
     });
   };
 
-  console.log('the data from useEffect ==> ', data);
   return (
     <div>
+      <Editable />
       <Table className={classes.root}>
         <TableHead>
           <TableRow>
