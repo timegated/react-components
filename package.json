@@ -4,11 +4,16 @@
   "private": true,
   "homepage": "https://github.com/timegated/personal-react-comp-gallery",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "notistack": "^1.0.9",
     "react": "^17.0.1",
+    "react-contenteditable": "^3.3.5",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
@@ -26,5 +31,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }

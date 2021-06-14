@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Layout from './components/common/layout';
-// The component gallery
-
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 
 ReactDOM.render(
-    <Layout>
-        <App />
-    </Layout>,
+    <Router>
+        <Layout>
+            <App />
+        </Layout>
+    </Router>,
     document.getElementById("root")
 );

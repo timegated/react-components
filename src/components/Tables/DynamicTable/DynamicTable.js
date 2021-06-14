@@ -1,84 +1,111 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import useStyles from '../styles';
+import { useSnackbar } from 'notistack';
+import ArrowDownIcon from '@material-ui/icons/ArrowDownward';
 import {
   Table,
   TableRow,
   TableHead,
   TableBody,
   TableCell,
-  Link,
 } from '@material-ui/core';
-import DynamicRow from './DynamicRow';
-import exitTest from '../../../assets/exit-test.svg';
-// import Loading from '../Loading/Loading';
-// import { format } from '../../utils/format';
-
-
+import Editable from '../../ContentEdit/Editable';
 
 /**
- * OBJ represents JSON data
- * @param {object}
- * @param {array}
+ * 
+ * @param {object} props.data - json data from an API request
+ * @param {array} propos.actions - array of strings passed in for CRUD
 */
+const DynamicTable = ({ actions }) => {
+  const [data, setData] = React.useState(null);
+  const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
 
-const DynamicTable = ({ obj, actions, crud }) => {
-  const [data, setData] = React.useState(obj);
- 
-  // we don't need the ID in the header column; could make it optional in case we do or hide it completely.
-  const createTableHeader = (json) => {
-    const noId = json.data.map(({ id, ...noId }) => noId);
-    return Object.keys(noId[0]).map((key, index) => {
-      return (<TableCell key={index}>{key}</TableCell>) // mapped over the enumerable props and displayed them
+  const handleIconClick = (key) => {
+    return enqueueSnackbar(`Sorting column ${JSON.stringify(key)}`, {
+      variant: 'info',
+      preventDuplicate: true,
     });
   };
 
-  const createTableRows = (json) => {
-    // I need as many rows as I have properties with their corresponding values.
-    const noId = json.data.map(({ id, ...noId }) => noId);
-    const keys = Object.keys(noId[0]);
-    return json.data.map((row, index) => {
-      console.log(row);
-      return (
-        <TableRow key={row.id}>
-          <DynamicRow key={row.id} data={row} keys={keys}/>
-        </TableRow>
-      );
-    })
+  /**
+   * Mocking data from an api, this is pretty much how we would use it from an in house API
+   * 
+   */
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => {
+        enqueueSnackbar('Loading successful', {
+          variant: 'success',
+        });
+        return res.json();
+      })
+      .then(json => {
+        enqueueSnackbar('Loading successful', {
+          variant: 'success',
+        });
+        return setData(json);
+      })
+      .catch(e => {
+        enqueueSnackbar('Loading failed!', {
+          variant: 'error',
+          preventDuplicate: true,
+        });
+        console.error(e)
+      });
+  }, []);
+
+  if (data === null) {
+    return <h2 style={{textAlign: 'center'}}>Loading ...</h2>
   };
 
-  /**
-   * Generates CRUD actions based on function arguments -- an array of strings.
-   * @param {array} 
-  */
-  
-  const createTableActions = ([...args]) => {
-    if (!actions) {
-      return null
-    }
-    return [...args].map((action, index) => {
-      return ( <Link to="#" rel="noopener noreferrer" key={index}>{action}</Link> )
+  const noId = data.map(({ id, address, company, ...rest }) => rest); // No need for id's as a table column
+ 
+  const createTableHeader = () => {
+    return Object.keys(noId[0]).map((key, index) => {
+      return (<TableCell
+        key={index}
+      >
+        {key}
+        <ArrowDownIcon className={classes.icon} onClick={() => handleIconClick(key)} />
+      </TableCell>) // mapped over the enumerable props and displayed them
+    });
+  };
+
+  const createTableRows = () => {
+    
+    const keys = Object.keys(noId[0]);
+    return data.map((row, id) => {
+      return (
+        <TableRow className="table__row" key={id}>
+          {keys.map((key, index) => {
+            return (
+              <TableCell className="table__text" key={index}>
+                <div>{row[key]}</div>
+              </TableCell>
+            );
+          })}
+        </TableRow>
+
+      );
     });
   };
 
   return (
     <div>
-      {/* <img src={exitTest} alt="" /> */}
-      <Table>
+      <Editable />
+      <Table className={classes.root}>
         <TableHead>
           <TableRow>
-            {createTableHeader(data)}
+            {data === null ? null : createTableHeader(data)}
           </TableRow>
         </TableHead>
         <TableBody>
-          {createTableRows(data)}
+          {data === null ? null : createTableRows(data)}
         </TableBody>
       </Table>
     </div>
   )
-};
-
-DynamicTable.propTypes = {
-  obj: PropTypes.object.isRequired,
 };
 
 export default DynamicTable;
