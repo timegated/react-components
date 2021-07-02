@@ -1,11 +1,7 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
   Link,
-  Route,
 } from 'react-router-dom';
-import Tables from '../../pages/Tables/Tables';
 import styled from 'styled-components';
 
 const NavContainer = styled.div`
@@ -55,6 +51,9 @@ const Navigation = () => {
           </NavItem>
           <NavItem>
             <Link to="/tables">Tables</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/editable">Editable</Link>
           </NavItem>
         </NavList>
       </NavContainer>

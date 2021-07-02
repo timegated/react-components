@@ -9,7 +9,6 @@ import {
   TableBody,
   TableCell,
 } from '@material-ui/core';
-import Editable from '../../ContentEdit/Editable';
 
 /**
  * 
@@ -93,7 +92,6 @@ const DynamicTable = ({ actions }) => {
 
   return (
     <div>
-      <Editable />
       <Table className={classes.root}>
         <TableHead>
           <TableRow>
