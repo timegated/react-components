@@ -76,10 +76,10 @@ const DynamicTable = ({ actions }) => {
     const keys = Object.keys(noId[0]);
     return data.map((row, id) => {
       return (
-        <TableRow className="table__row" key={id}>
+        <TableRow key={id}>
           {keys.map((key, index) => {
             return (
-              <TableCell className="table__text" key={index}>
+              <TableCell key={index}>
                 <div>{row[key]}</div>
               </TableCell>
             );

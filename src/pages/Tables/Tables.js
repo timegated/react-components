@@ -7,7 +7,7 @@ import { dataFormatter } from '../../utils/dataFormatter';
 import data from '../../dummy/language';
 
 const Tables = () => {
-  console.log('Object Entries', dataFormatter(data));
+  const entries = dataFormatter(data).slice(2);
   return (
     <>
     <Container>
@@ -15,7 +15,12 @@ const Tables = () => {
       <DynamicTable />
     </Container>
     <Container>
-      <TableV2 data={data} />
+      {entries.map((item, index) => {
+        console.log(item);
+        return (
+          <TableV2 key={index} data={item} />
+        )
+      })}
     </Container>
     </>
   )

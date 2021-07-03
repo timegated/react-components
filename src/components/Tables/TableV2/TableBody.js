@@ -1,29 +1,31 @@
 import React from 'react'
-import { TableBody as MUITableBody } from '@material-ui/core';
+import { TableBody as MUITableBody, TableRow, TableCell } from '@material-ui/core';
 
-const TableBody = () => {
-  const createTableRows = () => {
-    const keys = Object.keys(noId[0]);
-    return data.map((row, id) => {
+const TableBody = ({ data }) => {
+  console.log('Data in TableBody', data);
+
+  const createTableRows = (entry) => {
+    console.log('Data in createTableRows', entry[1]);
+    const tableData = Object.entries(entry[1])
+    const keys = Object.keys(tableData[1][1]);
+    return tableData.map((row, id) => {
       return (
         <TableRow key={id}>
           {keys.map((key, index) => {
             return (
               <TableCell key={index}>
-                <div>{row[key]}</div>
+                <div>{row[1][key]}</div>
               </TableCell>
             );
           })}
-          {!actions ? null : <TableCell className={classes.actions}>{createTableActions(actionsArr)}</TableCell>}
-          {!chips ? null : renderStatus(row.status)}
         </TableRow>
-
       );
     });
   };
+
   return (
     <MUITableBody>
-      
+      {createTableRows(data)}
     </MUITableBody>
   )
 }

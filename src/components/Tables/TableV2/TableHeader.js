@@ -1,7 +1,7 @@
 import React from 'react'
-import { TableHeader as MUITableHeader } from '@material-ui/core';
+import { TableHead as MUITableHead, TableRow, TableCell } from '@material-ui/core';
 
-const TableHeader = () => {
+const TableHeader = ({ data }) => {
   const createTableHeader = (obj) => {
     return Object.keys(obj).map((key, index) => {
       return (
@@ -9,10 +9,15 @@ const TableHeader = () => {
       );
     });
   };
+
   return (
-    <MUITableHeader>
-      
-    </MUITableHeader>
+    <MUITableHead>
+      <TableRow>
+        <TableCell>
+          <div>{data[0]}</div>
+          </TableCell>
+      </TableRow>
+    </MUITableHead>
   )
 }
 
