@@ -9,23 +9,19 @@ const NavContainer = styled.div`
   top: 0;
   left: 0;
   margin: 0;
-  padding: 2.5rem;
   background: #FFFFFF;
-  width: 100%;
+  width: 150px;
+  padding-right: 1.5rem;
 `;
 
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
-  @media (min-width: ${props => props.theme.breakpoints.sm}) {
-    flex-direction: row;
-  }
   list-style: none;
 `;
 
 const NavItem = styled.li`
-  margin-left: 0.5rem;
-
+  margin-top: .75rem;
   &:first-child {
     margin: 0;
   }
@@ -54,6 +50,9 @@ const Navigation = () => {
           </NavItem>
           <NavItem>
             <Link to="/editable">Editable</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/expenses">Expenses</Link>
           </NavItem>
         </NavList>
       </NavContainer>

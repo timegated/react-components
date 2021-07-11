@@ -8,6 +8,9 @@ const GlobalStyles = createGlobalStyle`
   ${normalize};
   :root {
     font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    height: 100vmax;
   }
 
   body {

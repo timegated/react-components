@@ -6,15 +6,16 @@ import { Button } from '@material-ui/core';
 import Tables from './pages/Tables/Tables';
 import Buttons from './pages/Buttons/Buttons';
 import Editable from './pages/Editable/Editable';
+import Expenses from './pages/Expenses/Expenses';
 
 const App = () => {
   const notistackRef = React.createRef();
   const onClickDismiss = key => {
     notistackRef.current.closeSnackbar(key);
   };
- 
+
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       <SnackbarProvider
         ref={notistackRef}
         maxSnack={3}
@@ -35,8 +36,11 @@ const App = () => {
           <Route path="/editable">
             <Editable />
           </Route>
+          <Route path="/expenses">
+            <Expenses />
+          </Route>
         </Switch>
-        </SnackbarProvider>
+      </SnackbarProvider>
     </div>
   )
 };

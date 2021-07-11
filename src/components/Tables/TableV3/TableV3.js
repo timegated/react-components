@@ -2,8 +2,7 @@ import React from 'react'
 import {
   Table as MUITable,
 } from '@material-ui/core';
-import TableHeader from './TableHeader';
-import TableBody from './TableBody';
+import EditTable from './EditTable';
 
 /**
  * This is a table component that can take in both flat and nested objects
@@ -12,10 +11,9 @@ import TableBody from './TableBody';
  */
 const TableV2 = ({ data }) => {
   return (
-    <MUITable>
-      <TableHeader data={data} />
-      <TableBody  data={data} />
-    </MUITable>
+    <div>
+      <EditTable data={data} />
+    </div>
   )
 }
 
