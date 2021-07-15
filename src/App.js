@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from './layout/Navigation/Navigation';
+import { RecoilRoot } from 'recoil';
 import { SnackbarProvider } from 'notistack';
 import { Switch, Route } from 'react-router-dom';
 import { Button } from '@material-ui/core';
@@ -25,21 +26,23 @@ const App = () => {
           </Button>
         )}
       >
-        <Navigation />
-        <Switch>
-          <Route path="/buttons">
-            <Buttons />
-          </Route>
-          <Route path="/tables">
-            <Tables />
-          </Route>
-          <Route path="/editable">
-            <Editable />
-          </Route>
-          <Route path="/expenses">
-            <Expenses />
-          </Route>
-        </Switch>
+        <RecoilRoot>
+          <Navigation />
+          <Switch>
+            <Route path="/buttons">
+              <Buttons />
+            </Route>
+            <Route path="/tables">
+              <Tables />
+            </Route>
+            <Route path="/editable">
+              <Editable />
+            </Route>
+            <Route path="/expenses">
+              <Expenses />
+            </Route>
+          </Switch>
+          </RecoilRoot>
       </SnackbarProvider>
     </div>
   )
