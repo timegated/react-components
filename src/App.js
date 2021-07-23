@@ -8,6 +8,7 @@ import Tables from './pages/Tables/Tables';
 import Buttons from './pages/Buttons/Buttons';
 import Editable from './pages/Editable/Editable';
 import Expenses from './pages/Expenses/Expenses';
+import Composable from './pages/Composable/Composable';
 
 const App = () => {
   const notistackRef = React.createRef();
@@ -40,6 +41,9 @@ const App = () => {
             </Route>
             <Route path="/expenses">
               <Expenses />
+            </Route>
+            <Route path="/composable">
+              <Composable />
             </Route>
           </Switch>
           </RecoilRoot>

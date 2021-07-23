@@ -5,9 +5,9 @@ import {
 import styled from 'styled-components';
 
 const NavContainer = styled.div`
-  position: static;
+  position: fixed;
   top: 0;
-  left: 0;
+  bottom: 0;
   margin: 0;
   background: #FFFFFF;
   width: 150px;
@@ -53,6 +53,9 @@ const Navigation = () => {
           </NavItem>
           <NavItem>
             <Link to="/expenses">Expenses</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/composable">Composable</Link>
           </NavItem>
         </NavList>
       </NavContainer>
