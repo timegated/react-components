@@ -5,26 +5,21 @@ import {
 import styled from 'styled-components';
 
 const NavContainer = styled.div`
+  background: #FFFFFF;
+  margin: 0;
+  padding: 1.25rem;
   position: fixed;
   top: 0;
-  bottom: 0;
-  margin: 0;
-  background: #FFFFFF;
-  width: 150px;
-  padding-right: 1.5rem;
+  width: 100%;
 `;
 
 const NavList = styled.ul`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   list-style: none;
 `;
 
 const NavItem = styled.li`
-  margin-top: .75rem;
-  &:first-child {
-    margin: 0;
-  }
 
    a {
     text-decoration: none;
@@ -56,6 +51,9 @@ const Navigation = () => {
           </NavItem>
           <NavItem>
             <Link to="/composable">Composable</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/Tooltips">Tooltips</Link>
           </NavItem>
         </NavList>
       </NavContainer>

@@ -9,6 +9,7 @@ import Buttons from './pages/Buttons/Buttons';
 import Editable from './pages/Editable/Editable';
 import Expenses from './pages/Expenses/Expenses';
 import Composable from './pages/Composable/Composable';
+import Tooltips from './pages/Tooltips/Tooltips';
 
 const App = () => {
   const notistackRef = React.createRef();
@@ -17,7 +18,7 @@ const App = () => {
   };
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div>
       <SnackbarProvider
         ref={notistackRef}
         maxSnack={3}
@@ -44,6 +45,9 @@ const App = () => {
             </Route>
             <Route path="/composable">
               <Composable />
+            </Route>
+            <Route path="/composable">
+              <Tooltips />
             </Route>
           </Switch>
           </RecoilRoot>
