@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../../components/Buttons/Buttons';
+
 const Buttons = () => {
   return (
     <div style={{ marginLeft: '100%' }}>
