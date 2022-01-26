@@ -1,4 +1,4 @@
-import { TableCell as MUITableCell } from '@material-ui/core';
+import { TableCell as MUITableCell } from '@mui/material';
 import React from 'react'
 
 const DynamicRow = ({ data, keys }) => {

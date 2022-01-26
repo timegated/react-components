@@ -28,25 +28,27 @@ const App = () => {
         )}
       >
         <RecoilRoot>
-          <Navigation />
-          <Switch>
-            <Route path="/buttons">
-              <Buttons />
-            </Route>
-            <Route path="/tables">
-              <Tables />
-            </Route>
-            <Route path="/editable">
-              <Editable />
-            </Route>
-            <Route path="/expenses">
-              <Expenses />
-            </Route>
-            <Route path="/composable">
-              <Composable />
-            </Route>
-          </Switch>
-          </RecoilRoot>
+          <div style={{ display: 'flex' }}>
+            <Navigation />
+            <Switch>
+              <Route path="/buttons">
+                <Buttons />
+              </Route>
+              <Route path="/tables">
+                <Tables />
+              </Route>
+              <Route path="/editable">
+                <Editable />
+              </Route>
+              <Route path="/expenses">
+                <Expenses />
+              </Route>
+              <Route path="/composable">
+                <Composable />
+              </Route>
+            </Switch>
+          </div>
+        </RecoilRoot>
       </SnackbarProvider>
     </div>
   )

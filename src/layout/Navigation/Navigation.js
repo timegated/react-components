@@ -11,16 +11,21 @@ const NavContainer = styled.div`
   margin: 0;
   background: #FFFFFF;
   width: 150px;
+  height: 100vh,
   padding-right: 1.5rem;
 `;
 
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
+  justifyContent: center;
+  align-items: center;
+  align-vertical: center;
   list-style: none;
 `;
 
 const NavItem = styled.li`
+  align-self: center;
   margin-top: .75rem;
   &:first-child {
     margin: 0;
