@@ -1,14 +1,14 @@
 import React from 'react';
 import useStyles from '../styles';
 import { useSnackbar } from 'notistack';
-import ArrowDownIcon from '@material-ui/icons/ArrowDownward';
+import ArrowDownIcon from '@mui/icons-material/ArrowDownward';
 import {
   Table,
   TableRow,
   TableHead,
   TableBody,
   TableCell,
-} from '@material-ui/core';
+} from '@mui/material';
 
 /**
  * 

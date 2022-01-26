@@ -20,6 +20,11 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled.li`
+  align-self: center;
+  margin-top: .75rem;
+  &:first-child {
+    margin: 0;
+  }
 
    a {
     text-decoration: none;

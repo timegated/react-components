@@ -1,5 +1,5 @@
 import React from 'react'
-import { TableHead as MUITableHead, TableRow, TableCell } from '@material-ui/core';
+import { TableHead as MUITableHead, TableRow, TableCell } from '@mui/material';
 
 const TableHeader = ({ data }) => {
   return (

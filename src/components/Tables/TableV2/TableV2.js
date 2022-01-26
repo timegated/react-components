@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   Table as MUITable,
-} from '@material-ui/core';
+} from '@mui/material';
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 

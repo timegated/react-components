@@ -1,7 +1,6 @@
 import React from 'react';
 import DynamicTable from '../../components/Tables/DynamicTable/DynamicTable';
 import TableV2 from '../../components/Tables/TableV2/TableV2';
-import TableV3 from '../../components/Tables/TableV3/TableV3';
 import { Typography } from '@material-ui/core';
 import { Container } from '@material-ui/core';
 import { dataFormatter } from '../../utils/dataFormatter';
@@ -22,9 +21,6 @@ const Tables = () => {
           <TableV2 key={index} data={item} />
         )
       })}
-    </Container>
-    <Container>
-      <TableV3 data={data} />
     </Container>
     </>
   )
