@@ -4,6 +4,7 @@ export const Container = styled.section`
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
+  justifyContent: 'center';
 `
 export const ButtonOne = styled.button`
   background: ${props => props.bg};
